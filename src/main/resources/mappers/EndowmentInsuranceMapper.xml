@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ytbdmhy.pdftool.dao.EndowmentInsuranceDao" >
+    <resultMap id="BaseResultMap" type="com.ytbdmhy.pdftool.entity.EndowmentInsurance" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="gender" property="gender" jdbcType="INTEGER" />
+        <result column="nation" property="nation" jdbcType="VARCHAR" />
+        <result column="identityNumber" property="identityNumber" jdbcType="VARCHAR" />
+        <result column="phone" property="phone" jdbcType="VARCHAR" />
+        <result column="payment_standard" property="paymentStandard" jdbcType="VARCHAR" />
+        <result column="is_village_signature" property="isVillageSignature" jdbcType="INTEGER" />
+        <result column="is_town_signature" property="isTownSignature" jdbcType="INTEGER" />
+    </resultMap>
+    <sql id="Base_Column_List" >
+      id, `name`, gender, nation, identityNumber, phone, payment_standard, is_village_signature, is_town_signature
+    </sql>
+
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+        select
+        <include refid="Base_Column_List" />
+        from endowment_insurance_table
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+</mapper>
