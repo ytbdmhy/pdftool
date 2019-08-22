@@ -95,7 +95,7 @@ public class PdfUtil {
                 "</body>\n" +
                 "</html>";
         String html = null;
-        Writer writer = null;
+        StringWriter writer = null;
         HashMap<String, BaseOrgSocialInfo> param = new HashMap<>();
         param.put("baseOrgSocialInfo", baseOrgSocialInfo);
         try{
